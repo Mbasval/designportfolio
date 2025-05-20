@@ -1,18 +1,17 @@
 :root {
-  /* ==== Replace these placeholders with your Figma tokens ==== */
-  --clr-primary:            #000000;      /* main text/highlight color */
-  --clr-secondary:          #666666;      /* secondary text color */
-  --clr-accent:             #2E3B4E;      /* e.g. for role text */
+  /* Replace these with your actual Figma values */
+  --clr-primary:            #000000;
+  --clr-secondary:          #666666;
+  --clr-accent:             #2E3B4E;
   --font-family-base:       'Roboto', sans-serif;
-  --font-size-name:         clamp(2rem, 6vw, 3rem);
-  --font-size-role:         clamp(2.5rem, 8vw, 4rem);
-  --font-size-highlight:    clamp(3rem, 10vw, 5rem);
+  --font-size-name:         3rem;    /* e.g. 48px */
+  --font-size-role:         4rem;    /* e.g. 64px */
+  --font-size-highlight:    5rem;    /* e.g. 80px */
   --line-height-title:      1.1;
-  --spacing-vertical:       1.5rem;
-  --nav-font-size:          clamp(0.9rem, 2vw, 1.1rem);
-  --max-content-width:      1200px;
-  --padding-horizontal:     5vw;
-  /* ==== End of placeholders ==== */
+  --spacing-nav-top:        1rem;
+  --container-width:        600px;   /* width of your content block */
+  --padding-top:            10vh;
+  --padding-sides:          10vw;
 }
 
 * {
@@ -27,71 +26,75 @@ html, body {
 }
 
 .hero {
-  height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 var(--padding-horizontal);
+  align-items: flex-start;       /* start at top */
+  justify-content: center;       /* center horizontally */
+  min-height: 100vh;
+  padding: var(--padding-top) var(--padding-sides);
+  position: relative;
 }
 .hero-content {
-  max-width: var(--max-content-width);
   width: 100%;
+  max-width: var(--container-width);
 }
 
 .hero-title {
   line-height: var(--line-height-title);
 }
 .name {
-  color: var(--clr-secondary);
+  display: block;
   font-size: var(--font-size-name);
   font-weight: 600;
+  color: var(--clr-secondary);
 }
 .role {
-  color: var(--clr-accent);
+  display: block;
   font-size: var(--font-size-role);
   font-weight: 600;
+  color: var(--clr-accent);
 }
 .highlight {
-  color: var(--clr-primary);
+  display: block;
   font-size: var(--font-size-highlight);
   font-weight: 700;
+  color: var(--clr-primary);
 }
 
 .hero-nav {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-top: var(--spacing-vertical);
-  font-size: var(--nav-font-size);
+  margin-top: var(--spacing-nav-top);
+  font-size: 1rem;
   font-weight: 500;
 }
 .hero-nav a {
-  color: var(--clr-primary);
   text-decoration: none;
+  color: var(--clr-primary);
 }
 .divider {
   color: var(--clr-primary);
 }
 
 .scroll-down {
-  position: absolute;
-  bottom: 4vh;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
+  margin-top: 5vh;
+  width: 24px;
 }
 .arrow-icon {
-  display: block;
-  width: 24px;   /* adjust to match your SVG size */
+  width: 100%;
   height: auto;
+  display: block;
   animation: bounce 2s infinite;
 }
+
 @keyframes bounce {
-  0%,20%,50%,80%,100% { transform: translateX(-50%) translateY(0); }
-  40% { transform: translateX(-50%) translateY(-10px); }
-  60% { transform: translateX(-50%) translateY(-5px); }
+  0%,20%,50%,80%,100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
 }
 
-/* Sections for scrolling demo */
+/* Demo placeholder sections */
 section[id] {
   height: 100vh;
 }

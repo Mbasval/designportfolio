@@ -1,4 +1,4 @@
-// Fallback smooth scroll for browsers without CSS scroll-behavior
+
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
