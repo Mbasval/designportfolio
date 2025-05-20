@@ -1,63 +1,66 @@
-/* reset & body */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { height: 100%; font-family: 'Roboto', sans-serif; }
-
-/* HERO */
+:root {
+  --color-gray-dark: #111827;
+  --color-gray: #2E3B4E;
+  --color-gray-light: #666;
+  --color-black: #000;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+}
 .hero {
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+  padding: 0 5vw;
 }
 .hero-content {
-  text-align: left;
-  max-width: 90vw;
+  max-width: 1200px;
+  width: 100%;
 }
-
-/* Headline */
-.hero-content h1 {
+h1 {
   line-height: 1.1;
 }
-.name, .role {
-  color: #666;
+.name {
   font-weight: 600;
+  color: var(--color-gray-light);
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+.role {
+  font-weight: 600;
+  color: var(--color-gray);
+  font-size: clamp(2.5rem, 8vw, 4rem);
 }
 .highlight {
-  color: #000;
   font-weight: 700;
+  color: var(--color-black);
+  font-size: clamp(3rem, 10vw, 5rem);
 }
-
-/* Responsive font sizes */
-.name { font-size: 2.5rem; }
-.role { font-size: 3rem; }
-.highlight { font-size: 3.5rem; }
-
-@media (min-width: 768px) {
-  .name { font-size: 3rem; }
-  .role { font-size: 4rem; }
-  .highlight { font-size: 5rem; }
-}
-
-/* NAV */
 .hero-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   margin-top: 1.5rem;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   font-weight: 500;
 }
 .hero-nav a {
   text-decoration: none;
-  color: #000;
-  margin: 0 .5rem;
+  color: var(--color-black);
 }
 .divider {
-  color: #000;
-  margin: 0 .5rem;
+  color: var(--color-black);
 }
-
-/* SCROLL ARROW */
 .scroll-down {
   position: absolute;
-  bottom: 2rem;
+  bottom: 4vh;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -67,7 +70,7 @@ html, body { height: 100%; font-family: 'Roboto', sans-serif; }
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 12px solid #333;
+  border-top: 12px solid var(--color-gray-dark);
   animation: bounce 2s infinite;
 }
 @keyframes bounce {
@@ -75,8 +78,6 @@ html, body { height: 100%; font-family: 'Roboto', sans-serif; }
   40% { transform: translateX(-50%) translateY(-10px); }
   60% { transform: translateX(-50%) translateY(-5px); }
 }
-
-/* placeholder sections */
 section[id] {
-  height: 100vh; /* just to demo scrolling */
+  height: 100vh;
 }
